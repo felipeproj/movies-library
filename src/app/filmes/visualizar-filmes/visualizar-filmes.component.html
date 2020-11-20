@@ -1,12 +1,22 @@
 <ng-container *ngIf="filme else semRegistro">
-  <mat-list>
-    <mat-list-item> Título: {{ filme.titulo }} </mat-list-item>
-    <mat-list-item> Data de lançamento: {{ filme.dtLancamento | date: 'dd/MM/yyyy' }} </mat-list-item>
-    <mat-list-item> Gênero: {{ filme.genero }} </mat-list-item>
-    <mat-list-item> Descrição: {{ filme.descricao }} </mat-list-item>
-    <mat-list-item class="quebrar-linha"> <a [href]="filme.urlIMDb" target="_blank"> Nota:  {{ filme.nota }}</a>  </mat-list-item>
-    <img mat-card-image [src]="filme.urlFoto || semFoto">
-  </mat-list>
+  <div class="wrapper">
+    <mat-grid-list cols="4">
+      <mat-grid-tile colspan="1">
+        <img mat-card-image [src]="filme.urlFoto || semFoto">
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="3" class="content">
+        <!-- <h2 class="heading">{{ filme.titulo }}</h2> -->
+        <mat-list>
+          <mat-list-item> Título: {{ filme.titulo }} </mat-list-item>
+          <mat-list-item> Data de lançamento: {{ filme.dtLancamento | date: 'dd/MM/yyyy' }} </mat-list-item>
+          <mat-list-item> Gênero: {{ encontrarGenero(filme.genero) }} </mat-list-item>
+          <mat-list-item> Descrição: {{ filme.descricao }} </mat-list-item>
+          <mat-list-item class="quebrar-linha"> <a [href]="filme.urlIMDb" target="_blank"> Nota:  {{ filme.nota }}</a>  </mat-list-item>
+        </mat-list>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
   
   <mat-card>
     <mat-card-actions>

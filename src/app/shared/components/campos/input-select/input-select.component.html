@@ -1,7 +1,7 @@
 <div [formGroup]="formGroup">
   <mat-form-field class="full-width">
     <mat-select [placeholder]="titulo" [formControlName]="controlName">
-      <mat-option *ngFor="let opcao of opcoes" [value]="opcao.value">{{ opcao.label }}</mat-option>
+      <mat-option *ngFor="let opcao of opcoes" [value]="opcao.id">{{ opcao.label }}</mat-option>
     </mat-select>
     <mat-error *ngIf="validacao.hasErrorValidar(formControl, 'required')">Campo obrigatório</mat-error>
   </mat-form-field>

@@ -8,7 +8,7 @@
       "descricao": "A police officer joins a secret organization that polices and monitors extraterrestrial interactions on Earth.",
       "nota": 7.3,
       "urlIMDb": "https://www.imdb.com/title/tt0119654/",
-      "genero": "Ação"
+      "genero": 1
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "descricao": "Agent J is sent to find Agent K and restore his memory after the re-appearance of a case from K's past.",
       "nota": 6.2,
       "urlIMDb": "https://www.imdb.com/title/tt0120912",
-      "genero": "Ação"
+      "genero": 1
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "descricao": "Agent J travels in time to M.I.B.'s early days in 1969 to stop an alien from assassinating his friend Agent K and changing history.",
       "nota": 6.8,
       "urlIMDb": "https://www.imdb.com/title/tt1409024/",
-      "genero": "Ação"
+      "genero": 1
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "descricao": "The Men in Black have always protected the Earth from the scum of the universe. In this new adventure, they tackle their biggest threat to date: a mole in the Men in Black organization.",
       "nota": 5.6,
       "urlIMDb": "https://www.imdb.com/title/tt2283336/",
-      "genero": "Ação"
+      "genero": 1
     },
     {
       "id": 5,
@@ -48,7 +48,7 @@
       "descricao": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
       "nota": 8.7,
       "urlIMDb": "https://www.imdb.com/title/tt7286456/",
-      "genero": "Drama"
+      "genero": 7
     },
     {
       "id": 6,
@@ -58,7 +58,7 @@
       "descricao": "After the devastating events of Vingadores: Guerra Infinita (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
       "nota": 8.5,
       "urlIMDb": "https://www.imdb.com/title/tt4154796/",
-      "genero": "Aventura"
+      "genero": 3
     },
     {
       "id": 7,
@@ -68,7 +68,7 @@
       "descricao": "Carol Danvers becomes one of the universe's most powerful heroes when Earth is caught in the middle of a galactic war between two alien races.",
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
-      "genero": "Ação"
+      "genero": 1
     },
     {
       "id": 8,
@@ -78,17 +78,17 @@
       "descricao": "A newly fostered young boy in search of his mother instead finds unexpected super powers and soon gains a powerful enemy.",
       "nota": 7.1,
       "urlIMDb": "https://www.imdb.com/title/tt0448115/",
-      "genero": "Comédia"
+      "genero": 6
     },
     {
-      "id": 9,
       "titulo": "John Wick 3: Parabellum",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
       "dtLancamento": "2019-05-16T03:00:00.000Z",
       "descricao": "John Wick is on the run after killing a member of the international assassin's guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
       "nota": 7.5,
       "urlIMDb": "https://www.imdb.com/title/tt6146586/",
-      "genero": "Ação"
+      "genero": 5,
+      "id": 9
     },
     {
       "titulo": "Mistério no Mediterrâneo",
@@ -97,7 +97,7 @@
       "descricao": "A New York cop and his wife go on a European vacation to reinvigorate the spark in their marriage, but end up getting framed and on the run for the death of an elderly billionaire.",
       "nota": 6,
       "urlIMDb": "https://www.imdb.com/title/tt1618434/",
-      "genero": "Comédia",
+      "genero": 6,
       "id": 10
     },
     {
@@ -107,78 +107,42 @@
       "descricao": "testesteste",
       "nota": 9,
       "urlIMDb": "https://github.com/felipeproj?tab=repositories",
-      "genero": "Comédia",
+      "genero": 6,
       "id": 12
+    }
+  ],
+  "generos": [
+    {
+      "label": "Ação",
+      "id": 1
     },
     {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2020-11-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 3,
-      "urlIMDb": "",
-      "genero": "Ficcção cientifica",
-      "id": 14
+      "label": "Romance",
+      "id": 2
     },
     {
-      "titulo": "teste",
-      "urlFoto": "",
-      "dtLancamento": "2020-11-16T03:00:00.000Z",
-      "descricao": "",
-      "nota": 3,
-      "urlIMDb": "",
-      "genero": "Ficcção cientifica",
-      "id": 15
+      "label": "Aventura",
+      "id": 3
     },
     {
-      "titulo": "testee",
-      "urlFoto": "eeeeeeeeeeeee",
-      "dtLancamento": "2020-11-10T03:00:00.000Z",
-      "descricao": "ereere",
-      "nota": 1,
-      "urlIMDb": "eeeeeeeeeeeeeee",
-      "genero": "Terror",
-      "id": 16
+      "label": "Terror",
+      "id": 4
     },
     {
-      "titulo": "asddasdasd",
-      "urlFoto": "",
-      "dtLancamento": "2020-11-01T03:00:00.000Z",
-      "descricao": "",
-      "nota": 1,
-      "urlIMDb": "",
-      "genero": "Ficcção cientifica",
-      "id": 17
+      "label": "Ficcção cientifica",
+      "id": 5
     },
     {
-      "titulo": "asdsadas",
-      "urlFoto": "",
-      "dtLancamento": "2020-11-09T03:00:00.000Z",
-      "descricao": "",
-      "nota": 1,
-      "urlIMDb": "",
-      "genero": "Ficcção cientifica",
-      "id": 18
+      "label": "Comédia",
+      "id": 6
     },
     {
-      "titulo": "asdasdsad",
-      "urlFoto": null,
-      "dtLancamento": "2020-11-02T03:00:00.000Z",
-      "descricao": null,
-      "nota": 10,
-      "urlIMDb": null,
-      "genero": "Ficcção cientifica",
-      "id": 19
+      "label": "Drama",
+      "id": 7
     },
     {
-      "titulo": "Filme semd escrição de foto",
-      "urlFoto": "",
-      "dtLancamento": "2020-11-09T03:00:00.000Z",
-      "descricao": "teste",
-      "nota": 1,
-      "urlIMDb": "",
-      "genero": "Terror",
-      "id": 20
+      "id": 8,
+      "label": "Suspense"
     }
   ]
 }

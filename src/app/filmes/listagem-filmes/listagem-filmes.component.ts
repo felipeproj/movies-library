@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { debounceTime } from 'rxjs/operators';
 import { FilmesService } from 'src/app/core/filmes.service';
+import { GenerosDataService } from 'src/app/core/generos-data.service';
 import { InputSelectDto } from 'src/app/shared/components/campos/input-select/dto/input-select.dto';
 import { ConfigParams } from 'src/app/shared/models/config-params';
 import { Filme } from 'src/app/shared/models/filme';
@@ -26,7 +27,8 @@ export class ListagemFilmesComponent implements OnInit {
   constructor(
     private filmesService: FilmesService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private generosDataService: GenerosDataService
   ) { }
 
   ngOnInit() {
@@ -49,16 +51,13 @@ export class ListagemFilmesComponent implements OnInit {
         this.resetarConsulta();
       });
 
-    this.generos = [
-      {label: 'Ação', value: 'Ação'},
-      {label: 'Romance', value: 'Romance'},
-      {label: 'Aventura', value: 'Aventura'},
-      {label: 'Terror', value: 'Terror'},
-      {label: 'Ficcção cientifica', value: 'Ficcção cientifica'},
-      {label: 'Comédia', value: 'Comédia'},
-      {label: 'Drama', value: 'Drama'}
-    ];
-
+    this.generosDataService.generos$.subscribe(generosList => {
+      if (generosList && generosList.length === 0) {
+        this.generosDataService.getGeneros();
+      } else {
+        this.generos = generosList;
+      }
+    });
     this.listarFilmes();
   }
 
@@ -67,7 +66,11 @@ export class ListagemFilmesComponent implements OnInit {
   }
 
   abrir(id: number): void {
-    this.router.navigateByUrl(`/filmes/${id}`);
+    this.router.navigate([`/filmes/${id}`]);
+  }
+
+  encontrarGenero(generoId: number): string {
+    return this.generosDataService.getGeneroById(generoId);
   }
 
   private listarFilmes(): void {

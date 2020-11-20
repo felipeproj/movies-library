@@ -1,0 +1,54 @@
+<div class="wrapper">
+
+  <form autocomplete="off" novalidate [formGroup]="novoGenero" (ngSubmit)="submit()"  (ngReset)="reiniciarForm()">
+    <table *ngIf="novoGenero" mat-table [dataSource]="[1]" class="mat-elevation-z8">
+      
+      <!-- Label Column -->
+      <ng-container matColumnDef="label">
+        <th mat-header-cell *matHeaderCellDef> Descrição </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="width-75">
+            <dio-input-text  titulo="" [formGroup]="novoGenero" controlName="label"></dio-input-text>
+          </div>
+        </td>
+      </ng-container>
+    
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let element">  
+          <button class="button" color="accent" mat-raised-button>Adicionar gênero</button>
+          <button color="warn" mat-raised-button type="reset">Cancelar</button>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </form>
+
+
+  <table *ngIf="generos?.controls.length" mat-table [dataSource]="generos.controls" class="mat-elevation-z8">
+
+    <!-- Label Column -->
+    <ng-container matColumnDef="label">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="width-75">
+          <dio-input-text  titulo="" [formGroup]="element" controlName="label"></dio-input-text>
+        </div>
+      </td>
+    </ng-container>
+   
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let element">  
+        <button mat-button color="accent" (click)="editar(element)">Confirmar edição</button>   
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

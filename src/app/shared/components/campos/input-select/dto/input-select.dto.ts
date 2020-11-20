@@ -1,5 +1,5 @@
 export class InputSelectDto {
-  value: any;
+  id: any;
   label: string;
 
   constructor(obj?: any) {

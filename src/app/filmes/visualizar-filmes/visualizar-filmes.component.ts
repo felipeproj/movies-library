@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FilmesService } from 'src/app/core/filmes.service';
+import { GenerosDataService } from 'src/app/core/generos-data.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 import { Alerta } from 'src/app/shared/models/alerta';
@@ -23,7 +24,8 @@ export class VisualizarFilmesComponent implements OnInit {
     public dialog: MatDialog,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private filmesService: FilmesService
+    private filmesService: FilmesService,
+    private generosDataService: GenerosDataService
   ) { }
 
   ngOnInit() {
@@ -52,6 +54,10 @@ export class VisualizarFilmesComponent implements OnInit {
         this.filmesService.excluir(this.id).subscribe(() => this.router.navigateByUrl('/filmes'));
       }
     });
+  }
+
+  encontrarGenero(generoId: number): string {
+    return this.generosDataService.getGeneroById(generoId);
   }
 
   private visualizar(): void {

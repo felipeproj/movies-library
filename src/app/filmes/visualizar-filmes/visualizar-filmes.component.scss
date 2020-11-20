@@ -1,8 +1,15 @@
+.wrapper {
+  margin: 5vh 5vw;
+  width: 100%;
+}
+
 .mat-card-image {
-  width: 182px;
-  height: 268px;
-  margin: auto;
-  display: block;
+  width: calc(182px * 1.2);
+  height: calc(268px * 1.2);
+}
+
+.content .mati-figure {
+  text-align: left;
 }
 
 .quebrar-linha {

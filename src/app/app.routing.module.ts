@@ -1,46 +1,46 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FilmesModule } from './filmes/filmes.module';
 import { CadastroFilmesComponent } from './filmes/cadastro-filmes/cadastro-filmes.component';
+import { FilmesModule } from './filmes/filmes.module';
 import { ListagemFilmesComponent } from './filmes/listagem-filmes/listagem-filmes.component';
 import { VisualizarFilmesComponent } from './filmes/visualizar-filmes/visualizar-filmes.component';
+import { ListagemGenerosComponent } from './generos/listagem-generos/listagem-generos.component';
 
 const routes: Routes = [
 
   {
-      path: '',
-      redirectTo: 'filmes',
-      pathMatch: 'full'
+    path: '',
+    redirectTo: 'filmes',
+    pathMatch: 'full'
   },
   {
     path: 'filmes',
+    component: ListagemFilmesComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'filmes/cadastro',
     children: [
       {
         path: '',
-        component: ListagemFilmesComponent
-      },
-      {
-        path: 'cadastro',
-        children: [
-          {
-            path: '',
-            component: CadastroFilmesComponent,
-          },
-          {
-            path: ':id',
-            component: CadastroFilmesComponent,
-          }
-        ]
+        component: CadastroFilmesComponent,
       },
       {
         path: ':id',
-        component: VisualizarFilmesComponent,
-        pathMatch: 'full'
-      },
+        component: CadastroFilmesComponent,
+      }
     ]
   },
+  {
+    path: 'generos',
+    component: ListagemGenerosComponent
+  },
+  {
+    path: 'filmes/:id',
+    component: VisualizarFilmesComponent,
+    pathMatch: 'full'
+  },
   { path: '**', redirectTo: 'filmes' },
-
 ];
 
 @NgModule({

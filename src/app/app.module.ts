@@ -14,6 +14,7 @@ import { RodapeComponent } from './shared/components/rodape/rodape.component';
 
 import { FilmesModule } from './filmes/filmes.module';
 import { AlertaComponent } from './shared/components/alerta/alerta.component';
+import { GenerosModule } from './generos/generos.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AlertaComponent } from './shared/components/alerta/alerta.component';
     MaterialModule,
     AppRoutingModule,
     FilmesModule,
-    HttpClientModule
+    HttpClientModule,
+    GenerosModule
   ],
   entryComponents: [AlertaComponent],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt' }],

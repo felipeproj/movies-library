@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FilmesService } from 'src/app/core/filmes.service';
+import { GenerosDataService } from 'src/app/core/generos-data.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
 import { InputSelectDto } from 'src/app/shared/components/campos/input-select/dto/input-select.dto';
 import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
@@ -25,12 +26,13 @@ export class CadastroFilmesComponent implements OnInit {
   }
 
   constructor(
-    public validacao: ValidarCamposService,
     public dialog: MatDialog,
+    public validacao: ValidarCamposService,
     private fb: FormBuilder,
-    private filmesService: FilmesService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private filmesService: FilmesService,
+    private generosDataService: GenerosDataService
   ) { }
 
   ngOnInit() {
@@ -44,15 +46,13 @@ export class CadastroFilmesComponent implements OnInit {
       this.criarFormulario(this.criarFilmeEmBranco());
     }
 
-    this.generos = [
-      {label: 'Ação', value: 'Ação'},
-      {label: 'Romance', value: 'Romance'},
-      {label: 'Aventura', value: 'Aventura'},
-      {label: 'Terror', value: 'Terror'},
-      {label: 'Ficcção cientifica', value: 'Ficcção cientifica'},
-      {label: 'Comédia', value: 'Comédia'},
-      {label: 'Drama', value: 'Drama'}
-    ];
+    this.generosDataService.generos$.subscribe(generosList => {
+      if (generosList && generosList.length === 0) {
+        this.generosDataService.getGeneros();
+      } else {
+        this.generos = generosList;
+      }
+    });
   }
 
   submit(): void {

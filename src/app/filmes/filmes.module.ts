@@ -17,7 +17,7 @@ import { VisualizarFilmesComponent } from './visualizar-filmes/visualizar-filmes
     ReactiveFormsModule,
     FormsModule,
     CamposModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
   ],
   declarations: [CadastroFilmesComponent, ListagemFilmesComponent, VisualizarFilmesComponent]
 })
